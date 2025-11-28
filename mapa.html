@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa em Tempo Real - Kumbi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="style/mapa.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="map-header">
+        <div class="header-content">
+            <div class="logo">
+                <img src="/image/kumbi2.png" alt="Kumbi Logo">
+                <h1>Kumbi - Mapa em Tempo Real</h1>
+            </div>
+            <div class="nav-buttons">
+                <a href="dashboard.html" class="nav-btn">
+                    <i class="fas fa-tachometer-alt"></i>
+                    Dashboard
+                </a>
+                <a href="index.html" class="nav-btn">
+                    <i class="fas fa-arrow-left"></i>
+                    Voltar ao Site
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search Bar -->
+    <div class="search-container">
+        <div class="search-box">
+            <input type="text" class="search-input" placeholder="Para onde quer ir? Ex: Mutamba, Zango, Kilamba...">
+            <button class="search-btn">
+                <i class="fas fa-search"></i>
+                Pesquisar
+            </button>
+        </div>
+    </div>
+
+    <!-- Map Container -->
+    <div class="map-container">
+        <div id="map"></div>
+    </div>
+
+    <!-- Side Panel -->
+    <div class="side-panel" id="sidePanel">
+        <div class="panel-header">
+            <div class="panel-title">Detalhes da Rota</div>
+            <button class="close-panel" id="closePanel">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="panel-content">
+            <div class="eta-display">
+                <div class="eta-label">Tempo estimado até a paragem</div>
+                <div class="eta-value" id="etaValue">-- min</div>
+                <div class="eta-label">Próximo autocarro</div>
+            </div>
+
+            <div class="bus-info">
+                <div class="bus-header">
+                    <div class="bus-route">Rota 24 - Centro</div>
+                    <div class="bus-status status-active">A caminho</div>
+                </div>
+                <div class="bus-details">
+                    <div class="detail-item">
+                        <span class="detail-label">Autocarro</span>
+                        <span class="detail-value">#1024</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Motorista</span>
+                        <span class="detail-value">João Silva</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Lotação</span>
+                        <span class="detail-value">45/60</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Velocidade</span>
+                        <span class="detail-value">35 km/h</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="route-steps">
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-walking"></i>
+                    </div>
+                    <div class="step-content">
+                        <div class="step-title">Caminhe até a paragem</div>
+                        <div class="step-desc">Aproximadamente 5 minutos a pé</div>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-bus"></i>
+                    </div>
+                    <div class="step-content">
+                        <div class="step-title">Pegue o autocarro 24</div>
+                        <div class="step-desc">Direção: Centro - Mutamba</div>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="step-content">
+                        <div class="step-title">Chegada ao destino</div>
+                        <div class="step-desc">Tempo total: 25 minutos</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filters -->
+    <div class="filters">
+        <button class="filter-btn active" data-filter="all">
+            <i class="fas fa-bus"></i> Todos
+        </button>
+        <button class="filter-btn" data-filter="active">
+            <i class="fas fa-play-circle"></i> Em Movimento
+        </button>
+        <button class="filter-btn" data-filter="stopped">
+            <i class="fas fa-pause-circle"></i> Parados
+        </button>
+        <button class="filter-btn" data-filter="nearby">
+            <i class="fas fa-location-arrow"></i> Próximos
+        </button>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="script/mapa.js">
+    
+    </script>
+</body>
+
+</html>
