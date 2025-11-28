@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Estratégico - Kumbi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="/style/dashoard.css">
+       
+</head>
+
+<body>
+    <!-- Header Simplificado -->
+    <header class="dashboard-header">
+        <div class="header-content">
+            <div class="logo">
+                <img src="/image/kumbi2.png" alt="Kumbi Logo">
+                <h1>Kumbi Dashboard</h1>
+            </div>
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i>
+                Voltar ao Site
+            </a>
+        </div>
+    </header>
+
+    <!-- Dashboard Section -->
+    <section class="dashboard-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Dashboard Estratégico</h2>
+                <p class="section-subtitle">Controle total sobre sua frota com análises em tempo real e ferramentas de otimização</p>
+            </div>
+
+            <div class="dashboard">
+                <div class="sidebar">
+                    <div class="sidebar-title">
+                        <i class="fas fa-sliders-h"></i>
+                        Operações
+                    </div>
+                    <nav class="menu">
+                        <a class="nav-link active" data-view="overview">
+                            <i class="fas fa-home"></i>
+                            Visão Geral
+                        </a>
+                        <a class="nav-link" data-view="fleets">
+                            <i class="fas fa-bus"></i>
+                            Frotas
+                        </a>
+                        <a class="nav-link" data-view="passes">
+                            <i class="fas fa-id-card"></i>
+                            Passes
+                        </a>
+                        <a class="nav-link" data-view="routes">
+                            <i class="fas fa-route"></i>
+                            Rotas
+                        </a>
+                        <a class="nav-link" data-view="reports">
+                            <i class="fas fa-chart-bar"></i>
+                            Relatórios
+                        </a>
+                        <a class="nav-link" data-view="settings">
+                            <i class="fas fa-cog"></i>
+                            Configurações
+                        </a>
+                    </nav>
+                </div>
+
+                <div class="dashboard-content">
+                    <!-- Visão Geral -->
+                    <div id="overview" class="dashboard-view active">
+                        <div class="metrics">
+                            <div class="metric">
+                                <div class="muted">Veículos online</div>
+                                <div class="metric-value">128</div>
+                                <div class="metric-change positive">
+                                    <i class="fas fa-arrow-up"></i>
+                                    12% desde ontem
+                                </div>
+                            </div>
+                            <div class="metric">
+                                <div class="muted">Passes validados</div>
+                                <div class="metric-value">8.234</div>
+                                <div class="metric-change positive">
+                                    <i class="fas fa-arrow-up"></i>
+                                    5% desde ontem
+                                </div>
+                            </div>
+                            <div class="metric">
+                                <div class="muted">Tempo médio de chegada</div>
+                                <div class="metric-value">5 min</div>
+                                <div class="metric-change negative">
+                                    <i class="fas fa-arrow-down"></i>
+                                    2% desde ontem
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel">
+                            <div class="panel-header">
+                                <div class="panel-title">Frota Ativa</div>
+                                <div class="muted" style="font-size:13px">Atualizado: há 2 min</div>
+                            </div>
+
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Motorista</th>
+                                        <th>Rota</th>
+                                        <th>Estado</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>#1024</td>
+                                        <td>João Silva</td>
+                                        <td>24 - Centro</td>
+                                        <td><span class="status status-active">Em serviço</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>#1102</td>
+                                        <td>Lucia Santos</td>
+                                        <td>7 - Aeroporto</td>
+                                        <td><span class="status status-inactive">Parada</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>#1077</td>
+                                        <td>Carlos Lima</td>
+                                        <td>13 - Sul</td>
+                                        <td><span class="status status-active">Em serviço</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>#1125</td>
+                                        <td>Ana Costa</td>
+                                        <td>18 - Norte</td>
+                                        <td><span class="status status-active">Em serviço</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="panel">
+                            <div class="panel-header">
+                                <div class="panel-title">Relatórios & Indicadores</div>
+                            </div>
+                            <div class="muted mb-2" style="padding: 0 25px;">Métricas de desempenho do sistema</div>
+                            <div class="charts">
+                                <div class="chart-container">
+                                    <div class="chart-title">Tráfego por hora</div>
+                                    <canvas id="trafficChart"></canvas>
+                                </div>
+                                <div class="chart-container">
+                                    <div class="chart-title">Ocorrências</div>
+                                    <canvas id="incidentsChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Frotas -->
+                    <div id="fleets" class="dashboard-view">
+                        <div class="strategic-grid">
+                            <div class="strategic-card">
+                                <h3>Frota Total</h3>
+                                <p>Veículos disponíveis para operação</p>
+                                <div class="metric-value">156</div>
+                                <div class="metric-change positive">
+                                    <i class="fas fa-arrow-up"></i>
+                                    8% desde o mês passado
+                                </div>
+                            </div>
+                            <div class="strategic-card">
+                                <h3>Manutenção</h3>
+                                <p>Veículos em manutenção preventiva</p>
+                                <div class="metric-value">12</div>
+                                <div class="metric-change negative">
+                                    <i class="fas fa-arrow-up"></i>
+                                    3% desde a semana passada
+                                </div>
+                            </div>
+                            <div class="strategic-card">
+                                <h3>Eficiência</h3>
+                                <p>Índice de eficiência da frota</p>
+                                <div class="metric-value">87%</div>
+                                <div class="metric-change positive">
+                                    <i class="fas fa-arrow-up"></i>
+                                    2% desde ontem
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel">
+                            <div class="panel-header">
+                                <div class="panel-title">Status da Frota</div>
+                            </div>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Modelo</th>
+                                        <th>Ano</th>
+                                        <th>Última Manutenção</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>#1024</td>
+                                        <td>Mercedes-Benz O500U</td>
+                                        <td>2021</td>
+                                        <td>15/10/2023</td>
+                                        <td><span class="status status-active">Operacional</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>#1102</td>
+                                        <td>Volvo B8R</td>
+                                        <td>2020</td>
+                                        <td>10/10/2023</td>
+                                        <td><span class="status status-maintenance">Manutenção</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>#1077</td>
+                                        <td>Marcopolo Torino</td>
+                                        <td>2022</td>
+                                        <td>18/10/2023</td>
+                                        <td><span class="status status-active">Operacional</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>#1125</td>
+                                        <td>Mercedes-Benz O500U</td>
+                                        <td>2021</td>
+                                        <td>12/10/2023</td>
+                                        <td><span class="status status-active">Operacional</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Passes -->
+                    <div id="passes" class="dashboard-view">
+                        <div class="metrics">
+                            <div class="metric">
+                                <div class="muted">Passes Vendidos Hoje</div>
+                                <div class="metric-value">1.245</div>
+                                <div class="metric-change positive">
+                                    <i class="fas fa-arrow-up"></i>
+                                    8% desde ontem
+                                </div>
+                            </div>
+                            <div class="metric">
+                                <div class="muted">Receita Mensal</div>
+                                <div class="metric-value">Kz 245.680</div>
+                                <div class="metric-change positive">
+                                    <i class="fas fa-arrow-up"></i>
+                                    12% desde o mês passado
+                                </div>
+                            </div>
+                            <div class="metric">
+                                <div class="muted">Taxa de Validação</div>
+                                <div class="metric-value">98.7%</div>
+                                <div class="metric-change positive">
+                                    <i class="fas fa-arrow-up"></i>
+                                    0.5% desde ontem
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel">
+                            <div class="panel-header">
+                                <div class="panel-title">Tipos de Passes</div>
+                            </div>
+                            <div class="charts">
+                                <div class="chart-container">
+                                    <div class="chart-title">Distribuição de Passes</div>
+                                    <canvas id="passesChart"></canvas>
+                                </div>
+                                <div class="chart-container">
+                                    <div class="chart-title">Vendas por Período</div>
+                                    <canvas id="salesChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Rotas -->
+                    <div id="routes" class="dashboard-view">
+                        <div class="strategic-grid">
+                            <div class="strategic-card">
+                                <h3>Rotas Ativas</h3>
+                                <p>Número de rotas em operação</p>
+                                <div class="metric-value">24</div>
+                            </div>
+                            <div class="strategic-card">
+                                <h3>Pontualidade</h3>
+                                <p>Taxa média de pontualidade</p>
+                                <div class="metric-value">94%</div>
+                                <div class="metric-change positive">
+                                    <i class="fas fa-arrow-up"></i>
+                                    3% desde a semana passada
+                                </div>
+                            </div>
+                            <div class="strategic-card">
+                                <h3>Passageiros/Dia</h3>
+                                <p>Média de passageiros por dia</p>
+                                <div class="metric-value">12.458</div>
+                                <div class="metric-change positive">
+                                    <i class="fas fa-arrow-up"></i>
+                                    5% desde o mês passado
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel">
+                            <div class="panel-header">
+                                <div class="panel-title">Mapa de Rotas</div>
+                            </div>
+                            <div style="padding: 25px; text-align: center;">
+                                <div style="background: linear-gradient(135deg, #f5f7fb 0%, #e4e8f0 100%); height: 300px; border-radius: var(--border-radius); display: flex; align-items: center; justify-content: center; border: 1px dashed var(--gray-light);">
+                                    <div>
+                                        <i class="fas fa-map-marked-alt" style="font-size: 3rem; color: var(--primary); margin-bottom: 15px;"></i>
+                                        <div class="muted">Mapa interativo de rotas será implementado</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Relatórios -->
+                    <div id="reports" class="dashboard-view">
+                        <div class="panel">
+                            <div class="panel-header">
+                                <div class="panel-title">Relatórios Disponíveis</div>
+                            </div>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Relatório</th>
+                                        <th>Período</th>
+                                        <th>Última Atualização</th>
+                                        <th>Ação</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Desempenho de Frota</td>
+                                        <td>Mensal</td>
+                                        <td>20/10/2023</td>
+                                        <td><button class="btn-download">Baixar</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Análise Financeira</td>
+                                        <td>Trimestral</td>
+                                        <td>15/10/2023</td>
+                                        <td><button class="btn-download">Baixar</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ocupação de Rotas</td>
+                                        <td>Semanal</td>
+                                        <td>18/10/2023</td>
+                                        <td><button class="btn-download">Baixar</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Manutenção Preventiva</td>
+                                        <td>Mensal</td>
+                                        <td>10/10/2023</td>
+                                        <td><button class="btn-download">Baixar</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="panel">
+                            <div class="panel-header">
+                                <div class="panel-title">Indicadores Chave</div>
+                            </div>
+                            <div class="charts">
+                                <div class="chart-container">
+                                    <div class="chart-title">KPIs de Desempenho</div>
+                                    <canvas id="kpiChart"></canvas>
+                                </div>
+                                <div class="chart-container">
+                                    <div class="chart-title">Tendências</div>
+                                    <canvas id="trendsChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Configurações -->
+                    <div id="settings" class="dashboard-view">
+                        <div class="panel">
+                            <div class="panel-header">
+                                <div class="panel-title">Configurações do Sistema</div>
+                            </div>
+                            <div style="padding: 25px;">
+                                <div class="settings-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                                    <div class="setting-card" style="background: var(--light); padding: 20px; border-radius: var(--border-radius);">
+                                        <h3 style="margin-bottom: 15px; color: var(--primary);">Notificações</h3>
+                                        <div style="margin-bottom: 15px;">
+                                            <label style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                                                <input type="checkbox" checked> Alertas de Manutenção
+                                            </label>
+                                            <label style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                                                <input type="checkbox" checked> Notificações de Rotas
+                                            </label>
+                                            <label style="display: flex; align-items: center; gap: 10px;">
+                                                <input type="checkbox"> Relatórios Automáticos
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="setting-card" style="background: var(--light); padding: 20px; border-radius: var(--border-radius);">
+                                        <h3 style="margin-bottom: 15px; color: var(--primary);">Preferências</h3>
+                                        <div style="margin-bottom: 15px;">
+                                            <label style="display: block; margin-bottom: 10px;">Idioma:</label>
+                                            <select style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid var(--gray-light);">
+                                                <option>Português (Angola)</option>
+                                                <option>English</option>
+                                                <option>Español</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="margin-top: 25px; text-align: right;">
+                                    <button class="btn-save">Salvar Configurações</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script/dashboard.js">
+        
+    </script>
+</body>
+</html>
