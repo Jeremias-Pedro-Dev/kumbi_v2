@@ -54,6 +54,7 @@
     padding: 0 20px;
     flex-direction: column;
     display: flex;
+    margin-left: 14px;
 }
 .telaInialText p{
     color: var(--primary);
