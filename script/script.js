@@ -269,9 +269,37 @@
   const telaIncial = document.querySelector('.telaIncial')
   const janela = window
   janela.addEventListener('load',inciarJanela)
+  const main_plash = document.querySelector('.main_plash')
   function inciarJanela(){
+    main_plash.style.opacity = '0'
     setTimeout(()=>{
       telaIncial.style.display = 'none'
-
+      main_plash.style.opacity= '1'
+      main_plash.style.transition = '.9s'
     },8000)
   }
+  const entrar = document.querySelector('#entrar')
+  const usuarioNormal = document.querySelector('.usuarioNormal')
+  const Home = document.querySelector('.Home')
+  
+usuarioNormal.addEventListener('click',(e)=>{
+  e.preventDefault()
+  entrar.style.display = 'flex'
+  entrar.style.opacity = '0'
+  Home.style.display = 'none'
+  setTimeout(()=>{
+    entrar.style.opacity = '1'
+    entrar.style.transition = '.9s'
+  },200)
+})
+const fechar_modal = document.querySelector('.fechar_modal')
+fechar_modal.addEventListener('click',(e)=>{
+  e.preventDefault()
+  Home.style.display = 'block'
+  Home.style.opacity = '0'
+  entrar.style.display = 'none'
+  setTimeout(()=>{
+    Home.style.opacity = '1'
+    Home.style.transition = '.9s'
+  },200)
+})
