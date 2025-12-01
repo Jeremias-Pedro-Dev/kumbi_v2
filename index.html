@@ -16,7 +16,7 @@
 <body>
   <!-- Para ajudar na animção quando a tela carregar-->
   <div class="main_plash">
-   
+
     <section class="Home">
       <div class="hero">
         <div class="cardHero">
@@ -37,36 +37,56 @@
         <div class="cardHero">
           <div class="boxOptionHero">
             <div class="boxtBtnHero">
-              <a href="#">Entra como empresa</a>
+              <a href="#" class="usuarioEmpresa">Entra como empresa</a>
               <a href="#" class="usuarioNormal">Entrar como cidadão</a>
             </div>
           </div>
         </div>
       </div>
-      
+
     </section>
     <!--Entrar como cidadão-->
     <div class="modal" id="entrar">
       <div class="modal_content">
         <span class="fechar_modal">&times;</span>
         <h1>Entrar como cidadão</h1>
-      <form >
-         <div class="group_from">
-          <label for="">Nome do usuário</label>
-          <input type="text" id="entrar_cidadao" placeholder="Nome do usuário" required>
-         </div>
+        <form>
           <div class="group_from">
-          <label for="">Senha</label>
-          <input type="password" id="pass_entrar" placeholder="Senha" required>
-          <a href="#" style="text-align: right;margin: 3px 0;">Esqueceu senha?</a>
-        </div>
-        <button class="btn_login">
-          Entrar
-        </button>
-      </form>
+            <label for="">Nome do usuário</label>
+            <input type="text" id="entrar_cidadao" placeholder="Nome do usuário" required>
+          </div>
+          <div class="group_from">
+            <label for="">Senha</label>
+            <input type="password" id="pass_entrar" placeholder="Senha" required>
+            <a href="#" style="text-align: right;margin: 3px 0;">Esqueceu senha?</a>
+          </div>
+          <button class="btn_login">
+            Entrar
+          </button>
+        </form>
       </div>
     </div>
-
+    <!--Entrar como Empresa-->
+    <div class="modal" id="entrarEmpresa">
+      <div class="modal_content">
+        <span class="fechar_modal">&times;</span>
+        <h1>Conta da Empresa</h1>
+        <form>
+          <div class="group_from">
+            <label for="">Nome da empresa</label>
+            <input type="text" id="entrar_cidadao" placeholder="Nome da empresa" required>
+          </div>
+          <div class="group_from">
+            <label for="">Senha</label>
+            <input type="password" id="pass_entrar" placeholder="Senha" required>
+            <a href="#" style="text-align: right;margin: 3px 0;">Esqueceu senha?</a>
+          </div>
+          <button class="btn_login">
+            Entrar
+          </button>
+        </form>
+      </div>
+    </div>
   </div>
   <div class="telaIncial">
     <div class="content_telaInicial">

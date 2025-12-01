@@ -303,3 +303,27 @@ fechar_modal.addEventListener('click',(e)=>{
     Home.style.transition = '.9s'
   },200)
 })
+const usuarioEmpresa = document.querySelector('.usuarioEmpresa')
+const entrarEmpresa = document.querySelector('#entrarEmpresa')
+
+usuarioEmpresa.addEventListener('click',(e)=>{
+  e.preventDefault()
+  entrarEmpresa.style.display = 'flex'
+  entrarEmpresa.style.opacity = '0'
+  Home.style.display = 'none'
+  setTimeout(()=>{
+    entrarEmpresa.style.opacity = '1'
+    entrarEmpresa.style.transition = '.9s'
+  },200)
+})
+const fechar_modal_empresa = document.querySelector('#entrarEmpresa .fechar_modal')
+fechar_modal_empresa.addEventListener('click',(e)=>{
+  e.preventDefault()
+  Home.style.display = 'block'
+  Home.style.opacity = '0'
+  entrarEmpresa.style.display = 'none'
+  setTimeout(()=>{
+    Home.style.opacity = '1'
+    Home.style.transition = '.9s'
+  },200)
+})  
