@@ -41,7 +41,8 @@ body {
   margin-top: 60px;
   display: flex;
   align-items: center;
-  touch-action: none;
+  inset: 0;
+  scroll-behavior: none;
   justify-content: space-around;
 }
 .cardHero{
