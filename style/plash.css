@@ -51,6 +51,7 @@
 .content_telaInicial p{
     color: var(--primary);
     text-align: center;
+    margin-left: 8px;
     font-size: 1.5rem;
     animation: telatext 3s ease-in-out;
     font-weight: 600;
