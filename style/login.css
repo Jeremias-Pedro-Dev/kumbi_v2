@@ -203,6 +203,8 @@
 .modal h1 {
   margin-top: 10px;
   margin-bottom: 20px;
+  font-size: 1rem;
+  text-align: center;
   color: var(--texto-escuro);
 }
 
