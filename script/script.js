@@ -327,3 +327,26 @@ fechar_modal_empresa.addEventListener('click',(e)=>{
     Home.style.transition = '.9s'
   },200)
 })  
+const escolherConta = document.querySelector('.escolherConta')
+const criar_conta = document.querySelector('#criar_conta')
+criar_conta.addEventListener('click',(e)=>{
+  e.preventDefault()
+  escolherConta.style.display = 'flex'
+  escolherConta.style.opacity = '0'
+  Home.style.display = 'none'
+  setTimeout(()=>{
+    escolherConta.style.opacity = '1'
+    escolherConta.style.transition = '.9s'
+  },200)
+})
+const fechar_option = document.querySelector('.fechar_option')
+fechar_option.addEventListener('click',(e)=>{
+  e.preventDefault()
+  escolherConta.style.display = 'none'
+  Home.style.display = 'block'
+  Home.style.opacity = '0'
+  setTimeout(()=>{
+    Home.style.opacity = '1'
+    Home.style.transition = '.9s'
+  },200)
+})  

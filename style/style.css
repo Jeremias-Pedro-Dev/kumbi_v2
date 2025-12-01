@@ -84,6 +84,9 @@ body {
   font-weight: 600;
   transition: .4s ease-in-out;
 }
+.boxtBtnHero a i{
+  margin-right: 10px;
+}
 #criar_conta{
   background-color: var(--azul_escuro);
   color: var(--primary);
@@ -124,3 +127,5 @@ body {
   background-color: var(--azul_medio);
   color: var(--primary);
 }
+
+/* ====== Tela Inicial ====== */
