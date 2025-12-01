@@ -14,7 +14,6 @@
   top: 0;
   height: 100%;
   width: 100%;
-  touch-action: none;
   scroll-behavior: none;
   background-color: var(--azul_medio);
 }
