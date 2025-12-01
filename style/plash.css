@@ -1,66 +1,73 @@
 :root {
-      --primaria: #FFFFFF;
-      --secundaria: #F8F9FA;
-      --destaque: #FFC107;
-      --destaque-escuro: #FFA000;
-      --neutra_clara: #F2F2F2;
-      --neutra_escura: #6E6E6E;
-      --texto-escuro: #333333;
-      --texto-claro: #FFFFFF;
-      --bg-escuro: #121212;
-      --card-escuro: #1E1E1E;
-      --muted: #94a3b8;
-      --accent: #06b6d4;
-      --accent-2: #7c3aed;
-      --accent-3: #10b981;
-      --accent-4: #f59e0b;
-      --glass: rgba(255, 255, 255, 0.04);
-      --radius: 16px;
-      --gap: 20px;
-      --maxw: 1200px;
-      --ff-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-      --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-      --transition: all 0.3s ease;
-    }
-.plash{
-    background-color:var(--destaque);
-    width: 100%;
-    display: block;
-    position: fixed;
-    top: 0;
-    height: 100%;
-    z-index: 100;
-    opacity: 1;
-    transition: opacity 0.8s ease-out;
+    --primary:#FFFFFF;
+    --texto_primario:#1A2A36;
+    --texto_secundario:#4A3A36;
+    --icones:#2D3648;
+    --azul_escuro:#133D7A;
+    --azul_medio: #1E4F9A;
+    --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
 }
-.main_plash{
-    opacity: 0;
-    transition: opacity 0.8s ease-out;
+
+.telaIncial{
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--azul_medio);
 }
-.logo_plash{
+.content_telaInicial{
     height: 80vh;
-    padding: 0 20px;
+    font-family: 'Poppins',sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-
-.logo_plash .logo{
-    display: flex;
+.content_telaInicial .logo{
+    color: var(--primary);
     flex-direction: column;
-}
-.logo_plash .logo h1{
-    display: block;
-    font-size: 2.9rem;
-}
-.logo_plash .logo img{
-    width: 170px;
-    height: 90px;
-}
-.logo_plash p{
-    color: var(--primaria);
-    font-size: 1.6rem;
-    text-align: center;
+    display: flex;
+    align-items: center;
     font-weight: bold;
-} 
+    font-size: 2rem;
+    animation: telalogo 3s ease-in-out;
+}
+.logo img{
+    width: 120px;
+    animation: flutuar 5s ease-in-out infinite;
+}
+@keyframes flutuar {
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(10px);
+    }
+}
+.content_telaInicial p{
+    color: var(--primary);
+    font-size: 1.5rem;
+    animation: telatext 3s ease-in-out;
+    font-weight: 600;
+}
+@keyframes  telalogo  {
+    0%{
+       transform: translateY(-30px);
+       opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes  telatext  {
+    0%{
+       transform: translateY(30px);
+       opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

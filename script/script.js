@@ -1,4 +1,5 @@
  // Menu Mobile
+   /*
     const btn_menu = document.querySelector(".btn_menu");
     const icon_menu = btn_menu.querySelector("i");
     const mobileMenu = document.getElementById("mobileMenu");
@@ -111,7 +112,7 @@
 
     // Modal Handling
     const loginBtn = document.querySelectorAll('#loginBtn, #mobileLoginBtn');
-    const signupBtn = document.querySelectorAll('#signupBtn, #mobileSignupBtn');
+    const signunonepBtn = document.querySelectorAll('#signupBtn, #mobileSignupBtn');
     const loginModal = document.getElementById('loginModal');
     const signupModal = document.getElementById('signupModal');
     const closeLoginModal = document.getElementById('closeLoginModal');
@@ -196,3 +197,81 @@
     plash.style.display = 'none'
   },6000)
  }
+  
+    // Modal Handling
+    const loginBtn = document.querySelectorAll('#loginBtn, #mobileLoginBtn');
+    const signunonepBtn = document.querySelectorAll('#signupBtn, #mobileSignupBtn');
+    const loginModal = document.getElementById('loginModal');
+    const signupModal = document.getElementById('signupModal');
+    const closeLoginModal = document.getElementById('closeLoginModal');
+    const closeSignupModal = document.getElementById('closeSignupModal');
+    const goToSignup = document.getElementById('goToSignup');
+    const goToLogin = document.getElementById('goToLogin');
+
+    function openModal(modal) {
+      modal.style.display = 'flex';
+      // Close mobile menu if open
+      mobileMenu.classList.remove("menu-open");
+      overlay.classList.remove("active");
+      icon_menu.classList.remove("fa-xmark");
+      icon_menu.classList.add("fa-bars");
+    }
+
+    function closeModal(modal) {
+      modal.style.display = 'none';
+    }
+
+    loginBtn.forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        openModal(loginModal);
+      });
+    });
+
+    signupBtn.forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        openModal(signupModal);
+      });
+    });
+
+    closeLoginModal.addEventListener('click', function() {
+      closeModal(loginModal);
+    });
+
+    closeSignupModal.addEventListener('click', function() {
+      closeModal(signupModal);
+    });
+
+    goToSignup.addEventListener('click', function(e) {
+      e.preventDefault();
+      closeModal(loginModal);
+      openModal(signupModal);
+    });
+
+    goToLogin.addEventListener('click', function(e) {
+      e.preventDefault();
+      closeModal(signupModal);
+      openModal(loginModal);
+    });
+
+    // Fechar modal ao clicar fora
+    window.addEventListener('click', function(e) {
+      if (e.target === loginModal) {
+        closeModal(loginModal);
+      }
+      if (e.target === signupModal) {
+        closeModal(signupModal);
+      }
+    });*/
+
+
+  const telaIncial = document.querySelector('.telaIncial')
+  const janela = window
+  janela.addEventListener('load',inciarJanela)
+  function inciarJanela(){
+    setTimeout(()=>{
+      telaIncial.style.display = 'none'
+
+    },8000)
+  }
