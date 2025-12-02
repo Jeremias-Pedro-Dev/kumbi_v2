@@ -278,75 +278,26 @@
       main_plash.style.transition = '.9s'
     },8000)
   }
-  const entrar = document.querySelector('#entrar')
-  const usuarioNormal = document.querySelector('.usuarioNormal')
-  const Home = document.querySelector('.Home')
-  
-usuarioNormal.addEventListener('click',(e)=>{
-  e.preventDefault()
-  entrar.style.display = 'flex'
-  entrar.style.opacity = '0'
-  Home.style.display = 'none'
-  setTimeout(()=>{
-    entrar.style.opacity = '1'
-    entrar.style.transition = '.9s'
-  },200)
-})
-const fechar_modal = document.querySelector('.fechar_modal')
-fechar_modal.addEventListener('click',(e)=>{
-  e.preventDefault()
-  Home.style.display = 'block'
-  Home.style.opacity = '0'
-  entrar.style.display = 'none'
-  setTimeout(()=>{
-    Home.style.opacity = '1'
-    Home.style.transition = '.9s'
-  },200)
-})
-const usuarioEmpresa = document.querySelector('.usuarioEmpresa')
-const entrarEmpresa = document.querySelector('#entrarEmpresa')
+  // Modal login e criar conta
+  const signupModal = document.getElementById('signupModal')
+  const Btncriarconta = document.querySelector('.Btncriarconta').addEventListener('click',(e)=>{
+    e.preventDefault()
+    signupModal.style.display = 'flex'
+    signupModal.style.opacity = '0'
+    setTimeout(()=>{
+      signupModal.style.opacity ='1'
+      signupModal.style.transition ='.4s'
+    },300)
+  })
 
-usuarioEmpresa.addEventListener('click',(e)=>{
-  e.preventDefault()
-  entrarEmpresa.style.display = 'flex'
-  entrarEmpresa.style.opacity = '0'
-  Home.style.display = 'none'
-  setTimeout(()=>{
-    entrarEmpresa.style.opacity = '1'
-    entrarEmpresa.style.transition = '.9s'
-  },200)
-})
-const fechar_modal_empresa = document.querySelector('#entrarEmpresa .fechar_modal')
-fechar_modal_empresa.addEventListener('click',(e)=>{
-  e.preventDefault()
-  Home.style.display = 'block'
-  Home.style.opacity = '0'
-  entrarEmpresa.style.display = 'none'
-  setTimeout(()=>{
-    Home.style.opacity = '1'
-    Home.style.transition = '.9s'
-  },200)
-})  
-const escolherConta = document.querySelector('.escolherConta')
-const criar_conta = document.querySelector('#criar_conta')
-criar_conta.addEventListener('click',(e)=>{
-  e.preventDefault()
-  escolherConta.style.display = 'flex'
-  escolherConta.style.opacity = '0'
-  Home.style.display = 'none'
-  setTimeout(()=>{
-    escolherConta.style.opacity = '1'
-    escolherConta.style.transition = '.9s'
-  },200)
-})
-const fechar_option = document.querySelector('.fechar_option')
-fechar_option.addEventListener('click',(e)=>{
-  e.preventDefault()
-  escolherConta.style.display = 'none'
-  Home.style.display = 'block'
-  Home.style.opacity = '0'
-  setTimeout(()=>{
-    Home.style.opacity = '1'
-    Home.style.transition = '.9s'
-  },200)
-})  
+  const loginModal = document.getElementById('loginModal')
+  const goToLogin = document.getElementById('goToLogin').addEventListener('click',(e)=>{
+    e.preventDefault()
+     signupModal.style.display = 'none'
+    loginModal.style.display ='flex'
+    loginModal.style.opacity = '0'
+    setTimeout(()=>{
+      loginModal.style.opacity ='1'
+      loginModal.style.transition ='.4s'
+    },100)
+  })

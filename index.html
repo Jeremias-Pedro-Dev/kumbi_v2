@@ -16,99 +16,37 @@
 <body>
   <!-- Para ajudar na animção quando a tela carregar-->
   <div class="main_plash">
-
-    <section class="Home">
-      <div class="hero">
-        <div class="cardHero">
-          <div class="descriptionHero">
-            <h1>Kumbi</h1>
-            <p class="text_info">
-              Gestão de mobilidade inteligente
-            </p>
-            <p class="text">
-              A sua solução de gestão de frotas e mobilidade
-            </p>
-            <div class="boxtBtnHero">
-              <a href="#" id="criar_conta">Criar Conta</a>
-              <a href="#" id="saiba_mais">Saiba mais</a>
-            </div>
-          </div>
-        </div>
-        <div class="cardHero">
-          <div class="boxOptionHero">
-            <div class="boxtBtnHero">
-              <a href="#" class="usuarioEmpresa"><i class="fa-solid fa-building"></i> Entra como empresa</a>
-              <a href="#" class="usuarioNormal"> <i class="fa-solid fa-user"></i> Entrar como cidadão</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </section>
-    <!--Entrar como cidadão-->
-    <div class="modal" id="entrar">
-      <div class="modal_content">
-        <span class="fechar_modal">&times;</span>
-        <h1>Entrar como cidadão</h1>
-        <form>
-          <div class="group_from">
-            <label for="">Nome do usuário</label>
-            <input type="text" id="entrar_cidadao" placeholder="Nome do usuário" required>
-          </div>
-          <div class="group_from">
-            <label for="">Senha</label>
-            <input type="password" id="pass_entrar" placeholder="Senha" required>
-            <a href="#" style="text-align: right;margin: 3px 0;">Esqueceu senha?</a>
-          </div>
-          <button class="btn_login">
-            Entrar
-          </button>
-        </form>
-      </div>
-    </div>
-    <!--Entrar como Empresa-->
-    <div class="modal" id="entrarEmpresa">
-      <div class="modal_content">
-        <span class="fechar_modal">&times;</span>
-        <h1>Conta da Empresa</h1>
-        <form>
-          <div class="group_from">
-            <label for="">Nome da empresa</label>
-            <input type="text" id="entrar_cidadao" placeholder="Nome da empresa" required>
-          </div>
-          <div class="group_from">
-            <label for="">Senha</label>
-            <input type="password" id="pass_entrar" placeholder="Senha" required>
-            <a href="#" style="text-align: right;margin: 3px 0;">Esqueceu senha?</a>
-          </div>
-          <button class="btn_login">
-            Entrar
-          </button>
-        </form>
-      </div>
-    </div>
-    <div class="escolherConta" id="escolherConta">
-      <div class="modal_content">
-        <span class="fechar_option">&times;</span>
-        <h1>Criar conta</h1>
-        
-          <div class="group_from">
-            <a href="#">Conta Pessoal</a>
-          </div>
-          <div class="group_from">
-            <a href="#">Conta Empresa</a>
-          </div>
-        
-        
-      </div>
-    </div>
-
-
-<!-- Modal de Login 
-        <div class="" id="signupModal">
+    <!--Modal entrar ou login-->
+    <div class="modal" id="loginModal">
       <div class="modal-content">
-        <span class="close-modal" id="closeSignupModal">&times;</span>
-        <h2>Criar uma conta</h2>
+        <div class="logo_modal">
+          <img src="image/kumbi2.png" alt="logo"><h2>Entrar</h2>
+        </div>
+        <form class="modal-form">
+          <div class="form-group">
+            <label for="signupName">Nome do usuário</label>
+            <input type="text" id="signupName_login" placeholder="Nome do usuário" required>
+             <a href="#" class="recuperar_senha">Esqueceu o nome?</a>
+          </div>
+          <div class="form-group">
+            <label for="loginPassword">Senha</label>
+            <input type="password" id="loginPassword" placeholder="Sua senha" required>
+            <a href="#" class="recuperar_senha">Esqueceu a senha?</a>
+          </div>
+          <button type="submit" class="btn-signup">Entrar</button>
+        </form>
+      </div>
+      <button class="Btncriarconta">Criar conta</button>
+    </div>
+
+<!--Modal criar conta-->
+
+    <div class="modal" id="signupModal">
+      <div class="modal-content">
+      <div class="logo_modal">
+          <img src="image/kumbi2.png" alt="logo"><h2>Criar conta</h2>
+        </div>
+        
         <form class="modal-form">
           <div class="form-group">
             <label for="signupName">Nome Completo</label>
@@ -130,15 +68,17 @@
             <label for="signupConfirmPassword">Confirmar senha</label>
             <input type="password" id="signupConfirmPassword" placeholder="Confirme sua senha" required>
           </div>
-          <button type="submit" class=" btn-signup">Cadastrar</button>
+          <button type="submit" class=" btn-signup">Criar conta</button>
           <p style="text-align: center; margin-top: var(--neutra_escura) 15px;">Já tem uma conta? <a href="#"
               id="goToLogin">Faça login</a></p>
         </form>
       </div>
     </div>
   </div>
-  -->
+    <!--main_plash-->
   </div>
+
+  <!-- Tela inicial -->
   <div class="telaIncial">
     <div class="content_telaInicial">
       <div class="logo">
@@ -150,6 +90,7 @@
       </div>
     </div>
   </div>
+  <!-- Fim da tela inicial -->
   <script src="script/script.js">
   </script>
 </body>
