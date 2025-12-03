@@ -1,74 +1,91 @@
 <!DOCTYPE html>
-<html lang="pt-pt">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kumbi — Mobilidade Urbana Inteligente</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Kumbi — Mobilidade  Inteligente</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="style/usuario.css">
-    <link rel="stylesheet" href="font-wesome/fontawesome-free-6.7.2-web/css/all.min.css">
 </head>
+
 <body>
-    <header class="header">
-        <div class="logo">
-            <img src="image/kumbi2.png" alt="Logo Kumbi">
-            <h1>Kumbi</h1>
+    <!-- Cabeçalho Elegante com Barra de Pesquisa -->
+    <header class="cabecalho">
+        <!-- Logo -->
+        <div class="container-logo">
+            <a href="inicio.html" class="logo-link">
+                <img src="image/kumbi2.png" alt="Logo Kumbi" class="logo-imagem">
+                <h1 class="titulo-logo">Kumbi</h1>
+            </a>
         </div>
-        <div class="barraPesquisa">
-            <input type="text" placeholder="Pesquisar...">
 
+        <!-- Barra de Pesquisa Central -->
+        <div class="container-pesquisa">
+            <form class="formulario-pesquisa" action="#" method="get">
+                <input type="search" class="campo-pesquisa" placeholder="Pesquisar rotas, motoristas, empresas..."
+                    name="pesquisa" aria-label="Campo de pesquisa">
+                <button type="submit" class="botao-pesquisa" aria-label="Botão de pesquisa">
+                    <i class="fa-solid fa-magnifying-glass icone-pesquisa"></i>
+                </button>
+            </form>
         </div>
 
-    </header>
-    <main>
-        <aside>
-            <div class="perfil_usuario">
-                <div class="foto_perfil">
-                    <img src="image/perfil.jpg" alt="Foto de perfil do usuário">
-                </div>
-                <div class="info_usuario">
-                    <h2>Nome do Usuário</h2>
-                    <p>@nomeusuario</p>
-                </div>
-            </div>
-            <nav class="navegacao_usuario">
-                <ul>
-                    <li><a href="#"><i class="fas fa-home"></i> Início</a></li>
-                    <li><a href="#"><i class="fas fa-user"></i> Perfil</a></li>
-                    <li><a href="#"><i class="fas fa-cog"></i> Configurações</a></li>
-                    <li><a href="#"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
-                </ul>
-            </nav>  <header>
-        
-    </header>
-    <main>
-        <aside class="part1">
-          
-            <ul class="navbar">
-                <li>
-                    <a href="#" class="itens"><i class="fa-solid fa-home"></i> <span>Início</span></a>
+        <!-- Navegação Principal -->
+        <nav class="navegacao" aria-label="Navegação principal">
+            <ul class="lista-navegacao">
+                <li class="item-navegacao">
+                    <a href="#inicio" class="link-item ativo">
+                        <i class="fa-solid fa-home-alt icone-link"></i>
+                        <span>Início</span>
+                        <span class="indicador-ativo"></span>
+                    </a>
                 </li>
-                <li>
-                    <a href="#" class="itens"><i class="fa-solid fa-bus"></i> <span>Motorísta</span></a>
+                <li class="item-navegacao">
+                    <a href="#motorista" class="link-item">
+                        <i class="fa-solid fa-bus-alt icone-link"></i>
+                        <span>Motorista</span>
+                        <span class="indicador-ativo"></span>
+                    </a>
                 </li>
-                <li>
-                    <a href="#" class="itens"><i class="fa-solid fa-user"></i> <span>Empresa</span></a>
+                <li class="item-navegacao">
+                    <a href="#empresa" class="link-item">
+                        <i class="fa-solid fa-building icone-link"></i>
+                        <span>Empresa</span>
+                        <span class="indicador-ativo"></span>
+                    </a>
                 </li>
             </ul>
-        </aside>
-        <div class="main">
-        <div class="barra_busca_kumbi">
-            <input type="search">
-        </div>     
-        </div>
-        <div class="mapa">
-             
-            <!--Aqui vai aparecer mapa-->
-        </div>
-    </main>
-        </aside>
-    </main>
+        </nav>
+    </header>
+
+    <!-- Conteúdo da Página -->
+
+
+    <!-- Navegação para Mobile -->
+    <nav class="navegacao-mobile" aria-label="Navegação mobile">
+        <ul class="lista-navegacao-mobile">
+            <li class="item-navegacao-mobile">
+                <a href="#inicio" class="link-item-mobile ativo">
+                    <i class="fa-solid fa-home-alt icone-mobile"></i>
+                    <span>Início</span>
+                </a>
+            </li>
+            <li class="item-navegacao-mobile">
+                <a href="#motorista" class="link-item-mobile">
+                    <i class="fa-solid fa-bus-alt icone-mobile"></i>
+                    <span>Motorista</span>
+                </a>
+            </li>
+            <li class="item-navegacao-mobile">
+                <a href="#empresa" class="link-item-mobile">
+                    <i class="fa-solid fa-building icone-mobile"></i>
+                    <span>Empresa</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
 </body>
+
 </html>
