@@ -301,11 +301,3 @@
       loginModal.style.transition ='.4s'
     },100)
   })
-
-  const modal_form = document.querySelectorAll('.modal_form')
-  modal_form.forEach((form)=>{
-    form.addEventListener('submit',(e)=>{
-      e.preventDefault()
-      window.open('index2.html','_self')
-    })
-  })
