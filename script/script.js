@@ -273,6 +273,7 @@
   function inciarJanela(){
     main_plash.style.opacity = '0'
     setTimeout(()=>{
+      
       telaIncial.style.display = 'none'
       main_plash.style.opacity= '1'
       main_plash.style.transition = '.9s'
@@ -300,4 +301,16 @@
       loginModal.style.opacity ='1'
       loginModal.style.transition ='.4s'
     },100)
+  })
+  const modal_form = document.querySelectorAll('.modal_form')
+  modal_form.forEach((modal)=>{
+    modal.addEventListener('submit',(e)=>{
+      e.preventDefault()
+      telaIncial.style.display ='block'
+      main_plash.style.display = 'none'
+      setTimeout(()=>{
+        telaIncial.style.display ='none'
+         window.open('index2.html','_self')
+      },9000)
+    })
   })
