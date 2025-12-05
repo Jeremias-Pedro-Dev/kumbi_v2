@@ -376,6 +376,29 @@ body {
   width: 100%;
   padding: 20px;
 }
+:root {
+    --azul: #1E90FF;
+    --azul-escuro: #0B3C75;
+    --azul-claro: #E6F2FF;
+    --branco: #ffffff;
+}
+
+/* Container básico */
+.secao {
+    margin-top: 1.5rem;
+}
+
+/* Título */
+.secao h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--azul-escuro);
+    margin-bottom: .7rem;
+}
+.secao-mapa {
+  width: 100%;
+  padding: 20px;
+}
 
 #caixa-mapa {
   width: 100%;
@@ -388,6 +411,23 @@ body {
   font-size: 1.2rem;
   color: #555;
 }
+
+/* Responsivo para mobile */
+@media (max-width: 600px) {
+  #caixa-mapa {
+    height: 220px;
+    font-size: 1rem;
+  }
+}
+
+
+/* RESPONSIVIDADE GERAL */
+@media (min-width: 768px) {
+    .mapa-placeholder {
+        height: 220px;
+    }
+}
+
 
 /* Responsivo para mobile */
 @media (max-width: 600px) {
