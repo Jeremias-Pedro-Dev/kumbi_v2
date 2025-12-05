@@ -7,79 +7,161 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="style/usuario.css">
+    <link rel="stylesheet" href="style/login.css">
+    <link rel="stylesheet" href="style/plash.css">
 </head>
-<body>
-      <header class="cabecalho">
-        <!-- Logo -->
-        <div class="container-logo">
-            <a href="inicio.html" class="logo-link">
-                <img src="image/kumbi2.png" alt="Logo Kumbi" class="logo-imagem">
-                <h1 class="titulo-logo">Kumbi</h1>
-            </a>
-        </div>
-
-       
-
-        <!-- Navegação Principal -->
-        <nav class="navegacao" aria-label="Navegação principal">
-            <ul class="lista-navegacao">
-                <li class="item-navegacao">
-                    <a href="index2.html" class="link-item ">
-                        <i class="fa-solid fa-home-alt icone-link"></i>
+<body><div class="esconder">
+    
+          <header class="cabecalho">
+            <!-- Logo -->
+            <div class="container-logo">
+                <a href="inicio.html" class="logo-link">
+                    <img src="image/kumbi2.png" alt="Logo Kumbi" class="logo-imagem">
+                    <h1 class="titulo-logo">Kumbi</h1>
+                </a>
+            </div>
+    
+    
+    
+            <!-- Navegação Principal -->
+            <nav class="navegacao" aria-label="Navegação principal">
+                <ul class="lista-navegacao">
+                    <li class="item-navegacao">
+                        <a href="index2.html" class="link-item ">
+                            <i class="fa-solid fa-home-alt icone-link"></i>
+                            <span>Início</span>
+                            <span class="indicador-ativo"></span>
+                        </a>
+                    </li>
+                    <li class="item-navegacao">
+                        <a href="#motorista" class="link-item">
+                            <i class="fa-solid fa-bus-alt icone-link"></i>
+                            <span>Motorista</span>
+                            <span class="indicador-ativo"></span>
+                        </a>
+                    </li>
+                    <li class="item-navegacao">
+                        <a href="#empresa" class="link-item">
+                            <i class="fa-solid fa-building icone-link"></i>
+                            <span>Empresa</span>
+                            <span class="indicador-ativo"></span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+    
+        <!-- Conteúdo da Página -->
+          <section class="secao-mapa">
+      <div id="caixa-mapa">
+        <p>Mapa será exibido aqui…</p>
+      </div>
+    </section>
+    
+    
+    
+    
+        <!-- Navegação para Mobile -->
+        <nav class="navegacao-mobile" aria-label="Navegação mobile">
+            <ul class="lista-navegacao-mobile">
+                <li class="item-navegacao-mobile">
+                    <a href="index2.html" class="link-item-mobile ">
+                        <i class="fa-solid fa-home-alt icone-mobile"></i>
                         <span>Início</span>
-                        <span class="indicador-ativo"></span>
                     </a>
                 </li>
-                <li class="item-navegacao">
-                    <a href="#motorista" class="link-item">
-                        <i class="fa-solid fa-bus-alt icone-link"></i>
+                <li class="item-navegacao-mobile">
+                    <a href="#motorista" class="link-item-mobile">
+                        <i class="fa-solid fa-bus-alt icone-mobile"></i>
                         <span>Motorista</span>
-                        <span class="indicador-ativo"></span>
                     </a>
                 </li>
-                <li class="item-navegacao">
-                    <a href="#empresa" class="link-item">
-                        <i class="fa-solid fa-building icone-link"></i>
+                <li class="item-navegacao-mobile">
+                    <a href="#empresa" class="link-item-mobile">
+                        <i class="fa-solid fa-building icone-mobile"></i>
                         <span>Empresa</span>
-                        <span class="indicador-ativo"></span>
                     </a>
                 </li>
             </ul>
         </nav>
-    </header>
+</div>
 
-    <!-- Conteúdo da Página -->
-      <section class="secao-mapa">
-  <div id="caixa-mapa">
-    <p>Mapa será exibido aqui…</p>
+
+    <div class="main_plash">
+    <!--Modal entrar ou login-->
+    <div class="modal" id="loginModal">
+      <div class="modal-content">
+        <div class="logo_modal">
+          <img src="image/kumbi2.png" alt="logo"><h2>Entrar</h2>
+        </div>
+        <form class="modal_form">
+          <div class="form-group">
+            <label for="signupName">Nome do motorista</label>
+            <input type="text" id="signupName_login" placeholder="Nome do motorista" required>
+             <a href="#" class="recuperar_senha">Esqueceu o nome?</a>
+          </div>
+          <div class="form-group">
+            <label for="loginPassword">Senha</label>
+            <input type="password" id="loginPassword" placeholder="Sua senha" required>
+            <a href="#" class="recuperar_senha">Esqueceu a senha?</a>
+          </div>
+          <button type="submit" class="btn-signup">Entrar</button>
+        </form>
+      </div>
+      <button class="Btncriarconta">Criar conta</button>
+    </div>
+
+<!--Modal criar conta-->
+
+    <div class="modal" id="signupModal">
+      <div class="modal-content">
+      <div class="logo_modal">
+          <img src="image/kumbi2.png" alt="logo"><h2>Criar conta</h2>
+        </div>
+        
+        <form class="modal_form">
+          <div class="form-group">
+            <label for="signupName">Nome do motorista</label>
+            <input type="text" id="signupName" placeholder="Nome completo" required>
+          </div>
+          <div class="form-group">
+            <label for="signupEmail">Nome da empresa </label>
+            <input type="text" id="signupEmail" placeholder="Nome da empresa" required>
+          </div>
+         
+          <div class="form-group">
+            <label for="signupPassword">Senha</label>
+            <input type="password" id="signupPassword" placeholder="Crie uma senha" required>
+          </div>
+          <div class="form-group">
+            <label for="signupConfirmPassword">Confirmar senha</label>
+            <input type="password" id="signupConfirmPassword" placeholder="Confirme sua senha" required>
+          </div>
+          <button type="submit" class=" btn-signup">Criar conta</button>
+          <p style="text-align: center; margin-top: var(--neutra_escura) 15px;">Já tem uma conta? <a href="#"
+              id="goToLogin">Entrar</a></p>
+        </form>
+      </div>
+    </div>
+
   </div>
-</section>
 
-
-
-
-    <!-- Navegação para Mobile -->
-    <nav class="navegacao-mobile" aria-label="Navegação mobile">
-        <ul class="lista-navegacao-mobile">
-            <li class="item-navegacao-mobile">
-                <a href="index2.html" class="link-item-mobile ">
-                    <i class="fa-solid fa-home-alt icone-mobile"></i>
-                    <span>Início</span>
-                </a>
-            </li>
-            <li class="item-navegacao-mobile">
-                <a href="#motorista" class="link-item-mobile">
-                    <i class="fa-solid fa-bus-alt icone-mobile"></i>
-                    <span>Motorista</span>
-                </a>
-            </li>
-            <li class="item-navegacao-mobile">
-                <a href="#empresa" class="link-item-mobile">
-                    <i class="fa-solid fa-building icone-mobile"></i>
-                    <span>Empresa</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
+   
+    <!--main_plash-->
+  </div>
+  
+  <!-- Tela inicial -->
+  <div class="telaIncial">
+    <div class="content_telaInicial">
+      <div class="logo">
+        <img src="image/kumbi2.png" alt="">
+        <h1>Kumbi</h1>
+      </div>
+      <div class="telaInialText">
+        <p> Mobilidade inteligente</p>
+      </div>
+    </div>
+  </div>
+  <script src="script/motorista.js"></script>
 </body>
 </html>

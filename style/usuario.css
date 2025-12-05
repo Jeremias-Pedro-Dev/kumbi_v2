@@ -411,7 +411,9 @@ body {
   font-size: 1.2rem;
   color: #555;
 }
-
+.esconder{
+  display: none;
+}
 /* Responsivo para mobile */
 @media (max-width: 600px) {
   #caixa-mapa {
