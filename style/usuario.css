@@ -235,18 +235,7 @@ body {
 }
 
 /* Indicador de item ativo */
-.indicador-ativo {
-  position: absolute;
-  bottom: -5px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 5px;
-  height: 5px;
-  background-color: var(--azul_medio);
-  border-radius: 50%;
-  opacity: 0;
-  transition: var(--transicao);
-}
+
 
 .link-item.ativo .indicador-ativo {
   opacity: 1;

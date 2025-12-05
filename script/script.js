@@ -310,7 +310,7 @@
       main_plash.style.display = 'none'
       setTimeout(()=>{
         telaIncial.style.display ='none'
-         window.open('index2.html','_self')
+         window.open('index2.html','_blank')
       },9000)
     })
   })
