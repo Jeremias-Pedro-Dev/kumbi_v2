@@ -279,38 +279,83 @@
       main_plash.style.transition = '.9s'
     },8000)
   }
-  // Modal login e criar conta
-  const signupModal = document.getElementById('signupModal')
-  const Btncriarconta = document.querySelector('.Btncriarconta').addEventListener('click',(e)=>{
-    e.preventDefault()
-    signupModal.style.display = 'flex'
-    signupModal.style.opacity = '0'
-    setTimeout(()=>{
-      signupModal.style.opacity ='1'
-      signupModal.style.transition ='.4s'
-    },300)
-  })
+  //criar conta
+  const API_URL = "https://kumbi-backend.onrender.com";
 
-  const loginModal = document.getElementById('loginModal')
-  const goToLogin = document.getElementById('goToLogin').addEventListener('click',(e)=>{
-    e.preventDefault()
-     signupModal.style.display = 'none'
-    loginModal.style.display ='flex'
-    loginModal.style.opacity = '0'
-    setTimeout(()=>{
-      loginModal.style.opacity ='1'
-      loginModal.style.transition ='.4s'
-    },100)
-  })
-  const modal_form = document.querySelectorAll('.modal_form')
-  modal_form.forEach((modal)=>{
-    modal.addEventListener('submit',(e)=>{
-      e.preventDefault()
-      telaIncial.style.display ='block'
-      main_plash.style.display = 'none'
-      setTimeout(()=>{
-        telaIncial.style.display ='none'
-         window.open('index2.html','_blank')
-      },9000)
-    })
-  })
+// =====================
+// LOGIN
+// =====================
+document.getElementById("loginForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const username = document.getElementById("signupName_login").value;
+  const password = document.getElementById("loginPassword").value;
+
+  try {
+    const res = await fetch(`${API_URL}/login`, {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({
+        email: username,
+        password: password
+      })
+    });
+
+    const data = await res.json();
+
+    if (!res.ok) {
+      alert(data.detail || "Erro no login");
+      return;
+    }
+
+    localStorage.setItem("kumbi_token", data.token);
+    window.location.href = "../frontend/mapa.html";
+
+  } catch (err) {
+    alert("Erro de conexão com o servidor");
+  }
+});
+
+// =====================
+// CADASTRO
+// =====================
+document.getElementById("signupForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const name = document.getElementById("signupName").value;
+  const email = document.getElementById("signupEmail").value;
+  const username = document.getElementById("signupName_cadastrar").value;
+  const password = document.getElementById("signupPassword").value;
+  const confirm = document.getElementById("signupConfirmPassword").value;
+
+  if (password !== confirm) {
+    alert("As senhas não coincidem");
+    return;
+  }
+
+  try {
+    const res = await fetch(`${API_URL}/register`, {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({
+        name: name,
+        email: email,
+        password: password
+      })
+    });
+
+    const data = await res.json();
+
+    if (!res.ok) {
+      alert(data.detail || "Erro no cadastro");
+      return;
+    }
+
+    alert("Conta criada com sucesso. Faça login.");
+    document.getElementById("signupModal").style.display = "none";
+    document.getElementById("loginModal").style.display = "flex";
+
+  } catch (err) {
+    alert("Erro de conexão com o servidor");
+  }
+});

@@ -1,0 +1,32 @@
+kumbi/
+│
+├── backend/
+│   ├── main.py
+│   ├── database.py
+│   ├── models/
+│   │   ├── admin.py
+│   │   └── localizacao.py
+│   ├── routes/
+│   │   ├── admin.py
+│   │   └── dashboard.py
+│   ├── auth/
+│   │   ├── security.py
+│   │   └── jwt.py
+│   ├── realtime/
+│   │   └── websocket.py
+│   └── requirements.txt
+│
+|
+|
+frontend/
+│
+├── login.html
+├── dashboard.html
+│
+├── css/
+│   └── style.css
+│
+└── js/
+    ├── auth.js
+    ├── dashboard.js
+    └── websocket.js

@@ -9,10 +9,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style/style.css">
-  <link rel="stylesheet" href="style/resposividade.css">
-  <link rel="stylesheet" href="style/login.css">
-  <link rel="stylesheet" href="style/plash.css">
+  <link rel="stylesheet" href="../style/style.css">
+  <link rel="stylesheet" href="../style/resposividade.css">
+  <link rel="stylesheet" href="../style/login.css">
+  <link rel="stylesheet" href="../style/plash.css">
+  
+  
+  
 
 </head>
 
@@ -20,58 +23,64 @@
   <!-- Para ajudar na animção quando a tela carregar-->
   <div class="main_plash">
     <!--Modal entrar ou login-->
-    <div class="modal" id="loginModal">
+        <div class="modal" id="loginModal">
       <div class="modal-content">
         <div class="logo_modal">
-          <img src="image/kumbi2.png" alt="logo"><h2>Entrar</h2>
+          <img src="../image/kumbi2.png" alt="logo"><h2>Entrar</h2>
         </div>
-        <form class="modal_form">
+        <form class="modal_form" id="loginform">
           <div class="form-group">
             <label for="signupName">Nome do usuário</label>
-            <input type="text" id="signupName_login" placeholder="Nome do usuário" required>
+            <input type="text" id="signupName_login" id="email" name="username" placeholder="Nome do usuário" required>
              <a href="#" class="recuperar_senha">Esqueceu o nome?</a>
           </div>
           <div class="form-group">
             <label for="loginPassword">Senha</label>
-            <input type="password" id="loginPassword" placeholder="Sua senha" required>
+            <input type="password" id="loginPassword" id="senha" name="password" placeholder="Sua senha" required>
             <a href="#" class="recuperar_senha">Esqueceu a senha?</a>
           </div>
-          <button type="submit" class="btn-signup">Entrar</button>
+          <button type="submit" class="btn-signup" onclick="login()">Entrar</button>
         </form>
       </div>
-      <button class="Btncriarconta">Criar conta</button>
+      <button class="Btncriarconta" onclick="abrircadastro()">Criar conta</button> 
+  <select id="tipo" class="Btncriarconta" style="display= flex; justify-content:center;text-align=center">
+  <option value="admin">Empresa</option>
+  <option value="cliente">Cliente</option>
+  <option value="motorista">Motorista</option>
+</select>
+      <p><a href="/frontend/index2.html"></a></p>
     </div>
 
 <!--Modal criar conta-->
 
-    <div class="modal" id="signupModal">
+    <div class="modal" id="signupModal" style="display:none;">
       <div class="modal-content">
       <div class="logo_modal">
-          <img src="image/kumbi2.png" alt="logo"><h2>Criar conta</h2>
+          <img src="../image/kumbi2.png" alt="logo"><h2>Criar conta</h2>
         </div>
         
-        <form class="modal_form">
+        <form class="modal_form" id="singupform">
           <div class="form-group">
             <label for="signupName">Nome Completo</label>
-            <input type="text" id="signupName" placeholder="Nome do usuário" required>
+            <input type="text" id="signupName" placeholder="Nome do usuário" required name="name">
           </div>
           <div class="form-group">
             <label for="signupEmail">E-mail ou número de telefone </label>
-            <input type="email" id="signupEmail" placeholder="Seu e-mail ou número de telefone" required>
+            <input type="email" id="signupEmail" id="email" name="email" placeholder="Seu e-mail ou número de telefone" required>
           </div>
           <div class="form-group">
             <label for="signupName">Nome do usuário</label>
-            <input type="text" id="signupName_cadastrar" placeholder="Nome do usuário" required>
+            <input type="text" id="signupName_cadastrar" name="username" placeholder="Nome do usuário" required>
           </div>
           <div class="form-group">
             <label for="signupPassword">Senha</label>
-            <input type="password" id="signupPassword" placeholder="Crie uma senha" required>
+            <input type="password" id="signupPassword" id="senha" name="password" placeholder="Crie uma senha" required>
           </div>
           <div class="form-group">
             <label for="signupConfirmPassword">Confirmar senha</label>
-            <input type="password" id="signupConfirmPassword" placeholder="Confirme sua senha" required>
+            <input type="password" id="signupConfirmPassword"  name="password" placeholder="Confirme sua senha" required>
           </div>
-          <button type="submit" class=" btn-signup">Criar conta</button>
+          <button type="submit" class=" btn-signup" onclick="cadastrar()">Criar conta</button>
           <p style="text-align: center; margin-top: var(--neutra_escura) 15px;">Já tem uma conta? <a href="#"
               id="goToLogin">Entrar</a></p>
         </form>
@@ -88,7 +97,7 @@
   <div class="telaIncial">
     <div class="content_telaInicial">
       <div class="logo">
-        <img src="image/kumbi2.png" alt="">
+        <img src="../image/kumbi2.png" alt="">
         <h1>Kumbi</h1>
       </div>
       <div class="telaInialText">
@@ -97,8 +106,13 @@
     </div>
   </div>
   <!-- Fim da tela inicial -->
-  <script src="script/script.js">
-  </script>
+  <script src="../script/script.js"></script>
+  <script src="./js/auth.js"></script>
+  
+ 
 </body>
 
 </html>
+
+
+  

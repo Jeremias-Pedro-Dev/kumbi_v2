@@ -1,0 +1,9 @@
+frontend/
+├── login.html
+├── cadastro.html
+├── mapa.html
+├── dashboard.html
+└── js/
+    ├── auth.js
+    ├── mapa.js
+    └── websocket.js

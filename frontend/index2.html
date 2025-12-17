@@ -8,6 +8,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="style/usuario.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+    <link rel="stylesheet" href="../style/mapa.css">
+    <link rel="stylesheet" href="../style/priva.css">
+    <link rel="stylesheet" href="../style/usuario.css">
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="https://cdn.socket.io/4.6.1/socket.io.min.js"></script>
+  
 </head>
 
 <body>
@@ -16,7 +23,7 @@
         <!-- Logo -->
         <div class="container-logo">
             <a href="inicio.html" class="logo-link">
-                <img src="image/kumbi2.png" alt="Logo Kumbi" class="logo-imagem">
+                <img src="../image/kumbi2.png" alt="Logo Kumbi" class="logo-imagem">
                 <h1 class="titulo-logo">Kumbi</h1>
             </a>
         </div>
@@ -55,6 +62,9 @@
                         <span>Empresa</span>
                         <span class="indicador-ativo"></span>
                     </a>
+                </li> <br>
+                <li class="item-navegacao">
+                    <button onclick="pagar()" class="botao-pesquisa">Pagar Corrida</button>
                 </li>
             </ul>
         </nav>
@@ -63,8 +73,9 @@
     <!-- Conteúdo da Página -->
     <section class="secao-mapa">
         <div id="caixa-mapa">
-            <p>Mapa será exibido aqui…</p>
+            <div id="map"></div>
         </div>
+        
     </section>
 
 
@@ -91,9 +102,13 @@
             </li>
         </ul>
     </nav>
-    <script>
-        alert('Inda esta em desenvolvimento. Algumas funcionalidades podem não estar disponíveis.')
-    </script>
+    
+    
 </body>
 
 </html>
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="./js/websocket.js"></script>
+<script src="./js/mapa.js"></script>
+
