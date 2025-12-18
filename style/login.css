@@ -215,14 +215,15 @@ body {
 .form-group label {
   margin-bottom: 8px;
   color: var(--texto_primario);
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 1.1rem;
 }
 
 .form-group input {
-  height: 40px;
+  height: 49px;
   padding: 5px 12px;
-  border: 1px solid var(--azul_escuro);
-  border-radius: 6px;
+  border: 3px solid var(--azul_escuro);
+  border-radius: 16px;
   background: #f0f0f0;
   color: var(--texto_primario);
   font-size: 16px;
@@ -231,13 +232,14 @@ body {
 .btn-signup {
   background-color: var(--azul_medio);
   width: 100%;
-  padding: 12px;
-  font-size: 16px;
+  padding: 12px 15px;
+  font-size: 19px;
   font-weight: 600;
+  height: 48px;
   color: var(--primary);
   margin: 15px 0;
   border: none;
-  border-radius: 6px;
+  border-radius: 16px;
   cursor: pointer;
   transition: var(--transition);
 }
@@ -258,7 +260,8 @@ body {
 
 .recuperar_senha {
   margin: 9px 0;
-  font-size: 14px;
+  color: #133D7A;
+  font-size: 17px;
   text-align: left;
 }
 
@@ -297,5 +300,57 @@ body {
 }
 #signupModal{
   display: none;
+}
+.boxMostrarsenha{
+  display: flex; 
+  justify-content: start;
+  gap: 5px;
+  align-items: center;
+  width: 100%;
+}
+.boxMostrarsenha .Mostrar{
+  height: 65px;
+  width: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.boxMostrarsenha label{
+  display: flex;
+  cursor: pointer; 
+  gap: 7px;
+  align-items: center;
+  justify-content: center;
+}
+.tipo_de_conta{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  appearance: none;
+  background-color: var(--azul_medio);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  justify-content: center;
+   padding: 12px 15px;
+  font-size: 19px;
+  font-weight: 600;
+  height: 48px;
+  color: var(--primary);
+  margin: 15px 0;
+  border: none;
+  outline: none;
+  border-radius: 16px;
+  cursor: pointer;
+}
+.text_tipo_conta{
+  color: var(--texto_primario);
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+.tipo_de_conta option{
+  text-align: center;
 }
 /* ====== Fim modal ====== */

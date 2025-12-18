@@ -27,7 +27,18 @@ async function cadastrar() {
   alert("Cadastrado com sucesso");
 }
 
+
 // function abrircadastro(){
 //   document.getElementById("loginform")
 //   document.getElementById("singnupModal")
 // esta função seria para ir ao cadastro}
+const loginModal = document.getElementById('loginModal')
+const signupModal = document.getElementById('signupModal')
+function abrircadastro(){
+  signupModal.style.display='flex'
+  loginModal.style.display ='none'
+}
+function gotologin(){
+  signupModal.style.display='none'
+  loginModal.style.display ='flex'
+}

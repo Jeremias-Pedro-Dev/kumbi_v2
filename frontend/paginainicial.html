@@ -4,18 +4,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Kumbi — Mobilidade  Inteligente</title>
+  <title>Kumbi — Mobilidade Inteligente</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="../style/style.css">
   <link rel="stylesheet" href="../style/resposividade.css">
   <link rel="stylesheet" href="../style/login.css">
   <link rel="stylesheet" href="../style/plash.css">
-  
-  
-  
 
 </head>
 
@@ -23,50 +22,57 @@
   <!-- Para ajudar na animção quando a tela carregar-->
   <div class="main_plash">
     <!--Modal entrar ou login-->
-        <div class="modal" id="loginModal">
+    <div class="modal" id="loginModal">
       <div class="modal-content">
         <div class="logo_modal">
-          <img src="../image/kumbi2.png" alt="logo"><h2>Entrar</h2>
+          <img src="../image/kumbi2.png" alt="logo">
+          <h2>Entrar</h2>
         </div>
-        <form class="modal_form" id="loginform">
+        <form class="modal_form" id="loginform" autocomplete="off">
           <div class="form-group">
             <label for="signupName">Nome do usuário</label>
             <input type="text" id="signupName_login" id="email" name="username" placeholder="Nome do usuário" required>
-             <a href="#" class="recuperar_senha">Esqueceu o nome?</a>
+
+            <a href="#" class="recuperar_senha">Esqueceu o nome?</a>
           </div>
           <div class="form-group">
             <label for="loginPassword">Senha</label>
             <input type="password" id="loginPassword" id="senha" name="password" placeholder="Sua senha" required>
+
             <a href="#" class="recuperar_senha">Esqueceu a senha?</a>
           </div>
+           <p class="text_tipo_conta">Tipo de conta</p>
+          <select id="tipo" class="tipo_de_conta">
+            <option value="admin">Empresa</option>
+            <option value="cliente">Cliente</option>
+            <option value="motorista">Motorista</option>
+          </select>
           <button type="submit" class="btn-signup" onclick="login()">Entrar</button>
         </form>
       </div>
-      <button class="Btncriarconta" onclick="abrircadastro()">Criar conta</button> 
-  <select id="tipo" class="Btncriarconta" style="display= flex; justify-content:center;text-align=center">
-  <option value="admin">Empresa</option>
-  <option value="cliente">Cliente</option>
-  <option value="motorista">Motorista</option>
-</select>
+      <button class="Btncriarconta" onclick="abrircadastro()">Criar conta</button>
+
       <p><a href="/frontend/index2.html"></a></p>
     </div>
 
-<!--Modal criar conta-->
+    <!--Modal criar conta-->
 
-    <div class="modal" id="signupModal" style="display:none;">
+    <div class="modal" id="signupModal" style="display: none;">
       <div class="modal-content">
-      <div class="logo_modal">
-          <img src="../image/kumbi2.png" alt="logo"><h2>Criar conta</h2>
+        <div class="logo_modal">
+          <img src="../image/kumbi2.png" alt="logo">
+          <h2>Criar conta</h2>
         </div>
-        
-        <form class="modal_form" id="singupform">
+
+        <form class="modal_form" id="singupform" autocomplete="off">
           <div class="form-group">
             <label for="signupName">Nome Completo</label>
             <input type="text" id="signupName" placeholder="Nome do usuário" required name="name">
           </div>
           <div class="form-group">
             <label for="signupEmail">E-mail ou número de telefone </label>
-            <input type="email" id="signupEmail" id="email" name="email" placeholder="Seu e-mail ou número de telefone" required>
+            <input type="email" id="signupEmail" id="email" name="email" placeholder="Seu e-mail ou número de telefone"
+              required>
           </div>
           <div class="form-group">
             <label for="signupName">Nome do usuário</label>
@@ -78,21 +84,27 @@
           </div>
           <div class="form-group">
             <label for="signupConfirmPassword">Confirmar senha</label>
-            <input type="password" id="signupConfirmPassword"  name="password" placeholder="Confirme sua senha" required>
+            <input type="password" id="signupConfirmPassword" name="password" placeholder="Confirme sua senha" required>
           </div>
+          <p class="text_tipo_conta">Tipo de conta</p>
+          <select id="tipo" class="tipo_de_conta">
+            <option value="admin">Empresa</option>
+            <option value="cliente">Cliente</option>
+            <option value="motorista">Motorista</option>
+          </select>
           <button type="submit" class=" btn-signup" onclick="cadastrar()">Criar conta</button>
           <p style="text-align: center; margin-top: var(--neutra_escura) 15px;">Já tem uma conta? <a href="#"
-              id="goToLogin">Entrar</a></p>
+              id="goToLogin" onclick="gotologin()">Entrar</a></p>
         </form>
       </div>
     </div>
 
   </div>
 
-   
-    <!--main_plash-->
+
+  <!--main_plash-->
   </div>
-  
+
   <!-- Tela inicial -->
   <div class="telaIncial">
     <div class="content_telaInicial">
@@ -106,13 +118,10 @@
     </div>
   </div>
   <!-- Fim da tela inicial -->
-  <script src="../script/script.js"></script>
+  <script src="/script/script.js"></script>
   <script src="./js/auth.js"></script>
-  
- 
+
+
 </body>
 
 </html>
-
-
-  
