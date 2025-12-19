@@ -6,31 +6,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kumbi — Mobilidade Inteligente</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap">
-    <link rel="stylesheet" href="style/usuario.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
-    <link rel="stylesheet" href="../style/mapa.css">
-    <link rel="stylesheet" href="../style/priva.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <link rel="stylesheet" href="../style/usuario.css">
-  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-  <script src="https://cdn.socket.io/4.6.1/socket.io.min.js"></script>
-  
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://cdn.socket.io/4.6.1/socket.io.min.js"></script>
+
 </head>
 
 <body>
-    <!-- Cabeçalho Elegante com Barra de Pesquisa -->
+    <header class="header" id="header">
+        <div class="logo">
+            <a href="#hero">
+                <img src="/image/kumbi2.png" alt="Kumbi Logo">
+                <h1>Kumbi</h1>
+            </a>
+        </div>
+        <nav class="nav">
+            <ul class="navbar">
+                <li> <a class="nav-link" href="#hero">Início</a></li>
+                <li><a class="nav-link" href="#features">Motorista</a></li>
+                <li><a class="nav-link" href="#app">Empresa</a></li>
+                <li>
+                    <a class="nav-link" href="#dashboard" onclick="pagar()">Pagamento</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="box_pesquisa">
+        
+        <div class="container-pesquisa">
+            <form class="formulario-pesquisa" action="#" method="get" autocomplete="off">
+                <input type="search" class="campo-pesquisa" placeholder="Pesquisar rotas...">
+                <button type="submit" class="botao-pesquisa" aria-label="Botão de pesquisa">
+                    <i class="fa-solid fa-magnifying-glass icone-pesquisa"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+    <!-- Cabeçalho Elegante com Barra de Pesquisa 
     <header class="cabecalho">
-        <!-- Logo -->
+        <! Logo 
         <div class="container-logo">
             <a href="inicio.html" class="logo-link">
                 <img src="../image/kumbi2.png" alt="Logo Kumbi" class="logo-imagem">
                 <h1 class="titulo-logo">Kumbi</h1>
             </a>
         </div>
+        -->
 
-        <!-- Barra de Pesquisa Central -->
+    <!-- Barra de Pesquisa Central 
         <div class="container-pesquisa">
-            <form class="formulario-pesquisa" action="#" method="get">
+            <form class="formulario-pesquisa" action="#" method="get" autocomplete="off">
                 <input type="search" class="campo-pesquisa" placeholder="Pesquisar rotas, motoristas, empresas..."
                     name="pesquisa" aria-label="Campo de pesquisa">
                 <button type="submit" class="botao-pesquisa" aria-label="Botão de pesquisa">
@@ -38,8 +65,9 @@
                 </button>
             </form>
         </div>
+        -->
 
-        <!-- Navegação Principal -->
+    <!-- Navegação Principal 
         <nav class="navegacao" aria-label="Navegação principal">
             <ul class="lista-navegacao">
                 <li class="item-navegacao">
@@ -68,14 +96,16 @@
                 </li>
             </ul>
         </nav>
+       
     </header>
+    -->
 
     <!-- Conteúdo da Página -->
     <section class="secao-mapa">
         <div id="caixa-mapa">
             <div id="map"></div>
         </div>
-        
+
     </section>
 
 
@@ -102,8 +132,8 @@
             </li>
         </ul>
     </nav>
-    
-    
+
+
 </body>
 
 </html>
@@ -111,4 +141,3 @@
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script src="./js/websocket.js"></script>
 <script src="./js/mapa.js"></script>
-
